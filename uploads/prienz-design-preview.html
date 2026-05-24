@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRIENZ Design System Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --color-bg: #FAFBFC;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #F5F5F5;
+  --color-text-primary: #111827;
+  --color-text-secondary: #6B7280;
+  --color-text-muted: #9CA3AF;
+  --color-accent-blue: #00B4D8;
+  --color-accent-green: #00D4AA;
+  --color-gradient: linear-gradient(135deg, #00D4AA, #00B4D8);
+  --color-section-mint: #F0FAFA;
+  --color-section-sky: #F0F7FF;
+  --color-section-dark: #111827;
+  --color-border: #E5E7EB;
+  --color-success: #00D4AA;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.10);
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'Geist Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-primary);
+  background: var(--color-bg);
+  line-height: 1.6;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* ===== NAV ===== */
+nav {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: 16px 0;
+  position: sticky; top: 0; z-index: 100;
+}
+nav .container {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-weight: 800; font-size: 24px;
+  color: var(--color-text-primary);
+}
+.nav-logo span { color: var(--color-accent-blue); }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  font-family: var(--font-body);
+  font-weight: 500; font-size: 15px;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--color-text-primary); }
+
+/* ===== HERO ===== */
+.hero {
+  padding: 96px 0 80px;
+  text-align: center;
+  background: var(--color-bg);
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 800; font-size: 56px;
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+.hero h1 .gradient-text {
+  background: var(--color-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero p {
+  font-size: 20px;
+  color: var(--color-text-secondary);
+  max-width: 600px; margin: 0 auto 40px;
+  line-height: 1.7;
+}
+.hero-illustration {
+  width: 100%; max-width: 500px; height: 280px; margin: 0 auto;
+  background: var(--color-gradient);
+  border-radius: 24px;
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-family: var(--font-display); font-size: 20px; font-weight: 600;
+  opacity: 0.9;
+}
+
+/* ===== SECTION SYSTEM ===== */
+.section { padding: 96px 0; }
+.section-mint { background: var(--color-section-mint); }
+.section-sky { background: var(--color-section-sky); }
+.section-dark { background: var(--color-section-dark); color: white; }
+.section-dark .color-text-secondary { color: #9CA3AF; }
+
+.section-label {
+  font-family: var(--font-display);
+  font-weight: 700; font-size: 14px;
+  text-transform: uppercase; letter-spacing: 1.5px;
+  background: var(--color-gradient);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 800; font-size: 40px;
+  line-height: 1.2; margin-bottom: 16px;
+}
+.section-desc {
+  font-size: 18px; color: var(--color-text-secondary);
+  max-width: 640px; line-height: 1.7;
+}
+
+/* ===== CARDS ===== */
+.card-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 24px; margin-top: 48px;
+}
+.card {
+  background: var(--color-surface);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.card-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: var(--color-gradient);
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-size: 24px; margin-bottom: 20px;
+}
+.card h3 {
+  font-family: var(--font-display);
+  font-weight: 700; font-size: 20px;
+  margin-bottom: 8px;
+}
+.card p {
+  font-size: 15px; color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* ===== TEAM ===== */
+.team-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 32px; margin-top: 48px;
+}
+.team-card { text-align: center; }
+.team-avatar {
+  width: 120px; height: 120px; border-radius: 50%;
+  background: var(--color-surface-alt);
+  margin: 0 auto 20px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 40px;
+  border: 3px solid var(--color-border);
+}
+.team-card h3 {
+  font-family: var(--font-display);
+  font-weight: 700; font-size: 20px;
+  margin-bottom: 4px;
+}
+.team-card .role {
+  font-size: 15px; color: var(--color-text-secondary);
+}
+
+/* ===== BUTTONS ===== */
+.btn-row { display: flex; gap: 16px; margin-top: 32px; justify-content: center; }
+.btn {
+  font-family: var(--font-display);
+  font-weight: 600; font-size: 16px;
+  padding: 14px 32px; border-radius: 12px;
+  border: none; cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none; display: inline-block;
+}
+.btn-primary {
+  background: var(--color-gradient);
+  color: white;
+}
+.btn-primary:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-secondary {
+  background: transparent;
+  color: var(--color-text-primary);
+  border: 2px solid var(--color-border);
+}
+.btn-secondary:hover { border-color: var(--color-accent-blue); color: var(--color-accent-blue); }
+
+/* ===== TYPOGRAPHY SPECIMEN ===== */
+.type-specimen { margin-top: 48px; }
+.type-row {
+  display: flex; align-items: baseline; gap: 24px;
+  padding: 20px 0; border-bottom: 1px solid var(--color-border);
+}
+.type-label {
+  font-family: var(--font-mono); font-size: 13px;
+  color: var(--color-text-muted);
+  width: 160px; flex-shrink: 0;
+}
+.type-sample-display { font-family: var(--font-display); font-weight: 800; }
+.type-sample-body { font-family: var(--font-body); }
+.type-sample-mono { font-family: var(--font-mono); }
+
+/* ===== COLOR SWATCHES ===== */
+.swatch-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px; margin-top: 32px;
+}
+.swatch {
+  border-radius: 12px; overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.swatch-color { height: 80px; }
+.swatch-info { padding: 12px; background: white; }
+.swatch-name { font-weight: 600; font-size: 14px; margin-bottom: 2px; }
+.swatch-hex { font-family: var(--font-mono); font-size: 12px; color: var(--color-text-muted); }
+
+/* ===== GRADIENT DIVIDER ===== */
+.gradient-divider {
+  height: 3px; border: none;
+  background: var(--color-gradient);
+  max-width: 120px;
+  margin: 0 0 32px;
+  border-radius: 2px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--color-section-dark);
+  padding: 64px 0 32px; color: white;
+}
+footer .container { display: flex; justify-content: space-between; align-items: start; }
+.footer-brand h3 {
+  font-family: var(--font-display); font-weight: 800; font-size: 24px; margin-bottom: 8px;
+}
+.footer-brand h3 span { color: var(--color-accent-blue); }
+.footer-brand p { color: #9CA3AF; font-size: 14px; max-width: 300px; }
+.footer-links h4 {
+  font-family: var(--font-display); font-weight: 600; font-size: 14px;
+  margin-bottom: 12px; color: #9CA3AF;
+}
+.footer-links a { display: block; color: white; text-decoration: none; font-size: 15px; margin-bottom: 8px; }
+.footer-links a:hover { color: var(--color-accent-blue); }
+.footer-copyright {
+  text-align: center; color: #6B7280; font-size: 13px;
+  margin-top: 48px; padding-top: 24px;
+  border-top: 1px solid #1F2937;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 36px; }
+  .hero p { font-size: 17px; }
+  .section-title { font-size: 28px; }
+  .card-grid, .team-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  footer .container { flex-direction: column; gap: 32px; }
+  .type-row { flex-direction: column; gap: 8px; }
+  .type-label { width: auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+<div class="container">
+  <div class="nav-logo">PRIEN<span>Z</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#service">Service</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container">
+  <h1>Together for a<br><span class="gradient-text">Greener Future</span></h1>
+  <p>기술과 진심을 더해, 버려지는 옷에 새로운 생명을,<br>반려동물에게는 맞춤형 행복을 선사합니다.</p>
+  <div class="btn-row">
+    <a href="#about" class="btn btn-primary">회사 소개</a>
+    <a href="#contact" class="btn btn-secondary">문의하기</a>
+  </div>
+  <div style="margin-top: 64px;">
+    <div class="hero-illustration">PRIENZ Illustration Placeholder</div>
+  </div>
+</div>
+</section>
+
+<!-- ABOUT / MISSION -->
+<section class="section section-mint" id="about">
+<div class="container">
+  <div class="section-label">About Us</div>
+  <h2 class="section-title">함께하는 문화로 내일을 바꾸고,<br>공유하는 가치로 세상에 온기를 전합니다</h2>
+  <p class="section-desc">PRIENZ는 AI 기술을 통해 자원의 선순환을 실천하며, 사람과 반려동물이 함께 행복한 지속 가능한 라이프스타일을 만들어갑니다.</p>
+  <hr class="gradient-divider" style="margin-top: 32px;">
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">P</div>
+      <h3>Passionate Together</h3>
+      <p>최고의 팀워크가 최고의 결과물을 만든다고 믿습니다. 팀의 열정을 원동력 삼아 함께 성장합니다.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">S</div>
+      <h3>Shared Impact</h3>
+      <p>업사이클링은 '함께하는 문화'여야 합니다. 친환경 가치를 세상과 소통하며 선한 영향력을 퍼뜨립니다.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">H</div>
+      <h3>Human-Tech Harmony</h3>
+      <p>AI 체형 측정 기술은 반려동물을 향한 배려와 사랑을 완성하는 따뜻한 도구로서 존재합니다.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SERVICE -->
+<section class="section" id="service">
+<div class="container">
+  <div class="section-label">Service</div>
+  <h2 class="section-title">Clother AI</h2>
+  <p class="section-desc">AI가 디자인하고, AI가 측정하고, 장인이 만드는 반려견 맞춤 옷. CLOTHE + TOGETHER = CLOTHER.</p>
+
+  <div class="card-grid" style="margin-top: 48px;">
+    <div class="card">
+      <div class="card-icon" style="font-size: 20px;">AI</div>
+      <h3>AI 디자인 생성</h3>
+      <p>세상에 하나뿐인 반려견 옷 디자인을 AI가 생성합니다. 견주의 취향과 강아지의 개성을 반영합니다.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">M</div>
+      <h3>AI 신체 측정</h3>
+      <p>사진 한 장으로 반려견의 정확한 신체 치수를 AI가 측정합니다. 완벽한 핏의 맞춤옷이 가능해집니다.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="font-size: 18px;">Up</div>
+      <h3>업사이클링 제작</h3>
+      <p>버려질 뻔한 옷이 반려견의 새 옷으로 다시 태어납니다. 지속 가능한 패션의 새로운 기준입니다.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- TEAM -->
+<section class="section section-sky" id="team">
+<div class="container">
+  <div class="section-label">Team</div>
+  <h2 class="section-title">만드는 사람들</h2>
+  <p class="section-desc">열정과 기술, 그리고 반려동물에 대한 사랑으로 뭉친 팀입니다.</p>
+
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-avatar">MG</div>
+      <h3>이명근</h3>
+      <p class="role">Co-founder</p>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">WJ</div>
+      <h3>김우주</h3>
+      <p class="role">Co-founder</p>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">KH</div>
+      <h3>김기홍</h3>
+      <p class="role">Co-founder</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- DESIGN SYSTEM SPECIMEN -->
+<section class="section" id="specimen">
+<div class="container">
+  <div class="section-label">Design System</div>
+  <h2 class="section-title">Typography</h2>
+
+  <div class="type-specimen">
+    <div class="type-row">
+      <div class="type-label">Display / 800<br>Plus Jakarta Sans</div>
+      <div class="type-sample-display" style="font-size: 48px;">Together for a Greener Future</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">H2 / 700<br>Plus Jakarta Sans</div>
+      <div class="type-sample-display" style="font-size: 32px; font-weight: 700;">함께하는 문화로 내일을 바꿉니다</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Body / 400<br>DM Sans</div>
+      <div class="type-sample-body" style="font-size: 16px;">AI 기술을 통해 자원의 선순환을 실천하며, 사람과 반려동물이 함께 행복한 지속 가능한 라이프스타일을 제안합니다.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Mono / 400<br>Geist Mono</div>
+      <div class="type-sample-mono" style="font-size: 14px;">accuracy: 98.2% | latency: 0.3s | measurements: 12 points</div>
+    </div>
+  </div>
+
+  <h2 class="section-title" style="margin-top: 64px;">Color Palette</h2>
+  <div class="swatch-grid">
+    <div class="swatch"><div class="swatch-color" style="background: #00B4D8;"></div><div class="swatch-info"><div class="swatch-name">Accent Blue</div><div class="swatch-hex">#00B4D8</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: #00D4AA;"></div><div class="swatch-info"><div class="swatch-name">Accent Green</div><div class="swatch-hex">#00D4AA</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: linear-gradient(135deg, #00D4AA, #00B4D8);"></div><div class="swatch-info"><div class="swatch-name">Brand Gradient</div><div class="swatch-hex">Green to Blue</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: #111827;"></div><div class="swatch-info"><div class="swatch-name">Text Primary</div><div class="swatch-hex">#111827</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: #6B7280;"></div><div class="swatch-info"><div class="swatch-name">Text Secondary</div><div class="swatch-hex">#6B7280</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: #FAFBFC; border: 1px solid #E5E7EB;"></div><div class="swatch-info"><div class="swatch-name">Background</div><div class="swatch-hex">#FAFBFC</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: #F0FAFA; border: 1px solid #E5E7EB;"></div><div class="swatch-info"><div class="swatch-name">Section Mint</div><div class="swatch-hex">#F0FAFA</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background: #F0F7FF; border: 1px solid #E5E7EB;"></div><div class="swatch-info"><div class="swatch-name">Section Sky</div><div class="swatch-hex">#F0F7FF</div></div></div>
+  </div>
+
+  <h2 class="section-title" style="margin-top: 64px;">Components</h2>
+  <div style="margin-top: 32px; display: flex; gap: 16px; flex-wrap: wrap;">
+    <a class="btn btn-primary">Primary Button</a>
+    <a class="btn btn-secondary">Secondary Button</a>
+  </div>
+  <div style="margin-top: 24px; display: flex; gap: 16px; flex-wrap: wrap;">
+    <div style="padding: 12px 20px; border-radius: 12px; background: #ECFDF5; color: #00D4AA; font-weight: 600; font-size: 14px;">Success</div>
+    <div style="padding: 12px 20px; border-radius: 12px; background: #FFFBEB; color: #F59E0B; font-weight: 600; font-size: 14px;">Warning</div>
+    <div style="padding: 12px 20px; border-radius: 12px; background: #FEF2F2; color: #EF4444; font-weight: 600; font-size: 14px;">Error</div>
+    <div style="padding: 12px 20px; border-radius: 12px; background: #F0F7FF; color: #00B4D8; font-weight: 600; font-size: 14px;">Info</div>
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+<div class="container">
+  <div class="footer-brand">
+    <h3>PRIEN<span>Z</span></h3>
+    <p>기술과 진심을 더해, 반려동물에게 맞춤형 행복을 선사합니다.</p>
+  </div>
+  <div class="footer-links">
+    <h4>COMPANY</h4>
+    <a href="#">회사 소개</a>
+    <a href="#">서비스</a>
+    <a href="#">뉴스</a>
+  </div>
+  <div class="footer-links">
+    <h4>CONTACT</h4>
+    <a href="mailto:contact@prienz.co.kr">contact@prienz.co.kr</a>
+    <a href="https://prienz.co.kr">prienz.co.kr</a>
+  </div>
+</div>
+<div class="footer-copyright">
+  &copy; 2026 PRIENZ. All rights reserved.
+</div>
+</footer>
+
+</body>
+</html>
