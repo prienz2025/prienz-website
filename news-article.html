@@ -1,19 +1,22 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Newsroom — PRIENZ</title>
-<meta name="description" content="PRIENZ 뉴스 기사">
-<link rel="stylesheet" href="css/tokens.css">
-<link rel="stylesheet" href="css/main.css">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
+  <link href="assets/favicon.ico" rel="icon" type="image/x-icon">
+  <link href="assets/favicon-180.png" rel="apple-touch-icon" sizes="180x180" type="image/png">
+  <title>Newsroom — PRIENZ</title>
+  <meta content="PRIENZ 뉴스 기사" name="description">
+  <link href="css/tokens.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
 </head>
 <body>
 
 <nav class="nav" id="main-nav">
   <div class="container">
-    <div class="nav-brand" role="button" tabindex="0" aria-label="PRIENZ 홈으로">
-      <img src="assets/logo.png" alt="PRIENZ" class="nav-logo">
+    <div aria-label="PRIENZ 홈으로" class="nav-brand" role="button" tabindex="0">
+      <img alt="PRIENZ" class="nav-logo" src="assets/logo.png">
     </div>
     <ul class="nav-links">
       <li><a href="index.html#about">About</a></li>
@@ -23,12 +26,14 @@
       <li><a href="team.html">Team</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
-    <button class="btn btn-primary nav-cta" data-action="open-contact" style="padding:10px 20px;font-size:14px">문의하기</button>
-    <button class="nav-burger" aria-label="Open menu" aria-expanded="false">
+    <button class="btn btn-primary nav-cta" data-action="open-contact"
+            style="padding:10px 20px;font-size:14px">문의하기
+    </button>
+    <button aria-expanded="false" aria-label="Open menu" class="nav-burger">
       <span></span><span></span><span></span>
     </button>
   </div>
-  <div class="nav-mobile" role="dialog" aria-hidden="true">
+  <div aria-hidden="true" class="nav-mobile" role="dialog">
     <ul class="nav-mobile-links">
       <li><a href="index.html#about">About</a></li>
       <li><a href="index.html#service">Service</a></li>
@@ -39,7 +44,7 @@
     </ul>
     <button class="btn btn-primary nav-mobile-cta" data-action="open-contact">문의하기</button>
   </div>
-  <div class="nav-progress" aria-hidden="true"></div>
+  <div aria-hidden="true" class="nav-progress"></div>
 </nav>
 
 <div id="article-root"></div>
@@ -47,7 +52,7 @@
 <footer id="contact">
   <div class="container cols">
     <div class="footer-brand">
-      <img src="assets/logo-light.png" alt="PRIENZ" class="footer-logo">
+      <img alt="PRIENZ" class="footer-logo" src="assets/logo-light.png">
       <p class="footer-brand-tagline">기술과 진심을 더해, 반려동물에게 맞춤형 행복을 선사합니다.</p>
     </div>
     <div class="footer-col">
@@ -60,32 +65,36 @@
     <div class="footer-col">
       <h4>Contact</h4>
       <a href="mailto:contact@prienz.co.kr">contact@prienz.co.kr</a>
-      <a href="https://prienz.co.kr" target="_blank" rel="noreferrer">prienz.co.kr</a>
+      <a href="https://prienz.co.kr" rel="noreferrer" target="_blank">prienz.co.kr</a>
     </div>
   </div>
   <div class="container">
     <div class="footer-corp">
       <div class="footer-corp-name">프렌즈</div>
       <dl class="footer-corp-info">
-        <dt>대표</dt><dd>이명근, 김우주, 김기홍</dd>
-        <dt>사업자 등록 번호</dt><dd>000-00-00000</dd>
-        <dt>본사</dt><dd>서울 동작구 현충로 213, 동작역 9호선 지하 2층 동작역 청년 창업 스튜디오 A-03</dd>
-        <dt>이메일</dt><dd>contact@prienz.co.kr</dd>
+        <dt>대표</dt>
+        <dd>이명근, 김우주, 김기홍</dd>
+        <dt>사업자 등록 번호</dt>
+        <dd>000-00-00000</dd>
+        <dt>본사</dt>
+        <dd>서울 동작구 현충로 213, 동작역 9호선 지하 2층 동작역 청년 창업 스튜디오 A-03</dd>
+        <dt>이메일</dt>
+        <dd>contact@prienz.co.kr</dd>
       </dl>
     </div>
     <div class="footer-bottom">
       <div class="footer-bottom-copy">© 2026 PRIENZ Corp. All rights reserved.</div>
       <div class="footer-bottom-links">
         <a href="business.html">사업자정보확인</a>
-        <a href="privacy.html" class="footer-bottom-strong">개인정보처리방침</a>
+        <a class="footer-bottom-strong" href="privacy.html">개인정보처리방침</a>
         <a href="terms.html">이용약관</a>
       </div>
     </div>
   </div>
 </footer>
 
-<div id="contact-modal-scrim" class="modal-scrim" style="display:none" aria-hidden="true">
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+<div aria-hidden="true" class="modal-scrim" id="contact-modal-scrim" style="display:none">
+  <div aria-labelledby="modal-title" aria-modal="true" class="modal" role="dialog">
     <div class="form-state">
       <form id="contact-form">
         <h2 id="modal-title">문의하기</h2>
@@ -93,20 +102,26 @@
         <div class="field-group">
           <div>
             <label for="contact-name">이름</label>
-            <input id="contact-name" class="field" name="name" placeholder="홍길동" required>
+            <input class="field" id="contact-name" name="name" placeholder="홍길동" required>
           </div>
           <div>
             <label for="contact-email">이메일</label>
-            <input id="contact-email" class="field" type="email" name="email" placeholder="hello@example.com" required>
+            <input class="field" id="contact-email" name="email" placeholder="hello@example.com"
+                   required type="email">
           </div>
           <div>
             <label for="contact-message">메시지</label>
-            <textarea id="contact-message" class="field" name="message" placeholder="투자 · 협업 · 채용 · 미디어 — 무엇이든 좋습니다."></textarea>
+            <textarea class="field" id="contact-message" name="message"
+                      placeholder="투자 · 협업 · 채용 · 미디어 — 무엇이든 좋습니다."></textarea>
           </div>
         </div>
         <div class="modal-actions">
-          <button type="button" class="btn btn-secondary modal-cancel" style="padding:10px 20px;font-size:14px">취소</button>
-          <button type="submit" class="btn btn-primary" style="padding:10px 24px;font-size:14px">보내기</button>
+          <button class="btn btn-secondary modal-cancel" style="padding:10px 20px;font-size:14px"
+                  type="button">취소
+          </button>
+          <button class="btn btn-primary" style="padding:10px 24px;font-size:14px" type="submit">
+            보내기
+          </button>
         </div>
       </form>
     </div>
