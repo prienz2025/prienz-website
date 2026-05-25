@@ -518,9 +518,10 @@ textarea.field { resize: none; min-height: 96px; font-family: var(--font-body); 
 .contact-location-address { font-family: var(--font-display); font-weight: 700; font-size: 19px; color: #fff; margin-bottom: 20px; letter-spacing: -0.005em; }
 .contact-map { position: relative; aspect-ratio: 16/11; border-radius: var(--radius-lg); overflow: hidden; background: linear-gradient(135deg, #1F2937 0%, #111827 100%); border: 1px solid rgba(255,255,255,0.06); }
 .contact-map::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 36px 36px; background-position: -1px -1px; pointer-events: none; }
-.contact-pin { position: absolute; top: 46%; left: 50%; transform: translate(-50%, -50%); display: inline-flex; align-items: center; gap: 10px; background: var(--brand-gradient); color: #fff; font-family: var(--font-display); font-weight: 700; font-size: 16px; letter-spacing: -0.005em; padding: 14px 24px; border-radius: 9999px; box-shadow: 0 8px 28px rgba(0,180,216,0.45); z-index: 3; pointer-events: none; white-space: nowrap; }
+.contact-pin { position: absolute; top: 42%; left: 40%; transform: translate(-50%, -50%); display: inline-flex; align-items: center; gap: 10px; background: var(--brand-gradient); color: #fff; font-family: var(--font-display); font-weight: 700; font-size: 16px; letter-spacing: -0.005em; padding: 14px 24px; border-radius: 9999px; box-shadow: 0 8px 28px rgba(0,180,216,0.45); z-index: 3; pointer-events: none; white-space: nowrap; }
 .contact-pin::after { content: ''; position: absolute; bottom: -5px; left: 50%; transform: translateX(-50%) rotate(45deg); width: 12px; height: 12px; background: var(--brand-blue); z-index: -1; }
 .contact-pin-dot { width: 8px; height: 8px; border-radius: 9999px; background: #fff; flex-shrink: 0; }
+.contact-map-img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* ---------- LEGAL PAGES ---------- */
 .legal-hero { padding: 96px 0 56px; background: linear-gradient(180deg, var(--bg) 0%, var(--section-mint) 100%); border-bottom: 1px solid var(--border); }
