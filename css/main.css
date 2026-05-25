@@ -236,10 +236,10 @@ section[id] { scroll-margin-top: 80px; }
 .team-grid .reveal:nth-child(2) { transition-delay: 120ms; }
 .team-grid .reveal:nth-child(3) { transition-delay: 240ms; }
 .card {
-  background: var(--surface); border-radius: var(--radius-lg); padding: 32px 32px 72px;
+  background: var(--surface); border-radius: var(--radius-lg); padding: 32px;
   box-shadow: var(--shadow-sm);
   transition: transform var(--dur-medium) var(--ease-out), box-shadow var(--dur-medium) var(--ease-out);
-  position: relative; overflow: hidden;
+  position: relative; overflow: hidden; height: 100%;
 }
 .card::after {
   content: ''; position: absolute; left: 0; bottom: 0;
@@ -248,14 +248,6 @@ section[id] { scroll-margin-top: 80px; }
 }
 .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 .card:hover::after { width: 100%; }
-.card-arrow {
-  position: absolute; right: 28px; bottom: 24px;
-  font-family: var(--font-display); font-size: 20px; color: var(--brand-blue);
-  opacity: 0; transform: translateX(-8px);
-  transition: opacity 280ms var(--ease-out), transform 320ms var(--ease-out);
-  pointer-events: none;
-}
-.card:hover .card-arrow { opacity: 1; transform: translateX(0); }
 .card-icon {
   width: 48px; height: 48px; border-radius: var(--radius-md);
   background: var(--brand-gradient); color: #fff;
@@ -385,10 +377,10 @@ textarea.field { resize: none; min-height: 96px; font-family: var(--font-body); 
 /* ---------- NEWS ---------- */
 .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
 .news-card {
-  display: block; background: var(--surface); border-radius: var(--radius-lg);
+  display: flex; flex-direction: column; background: var(--surface); border-radius: var(--radius-lg);
   padding: 32px 32px 36px; text-decoration: none; color: inherit;
   border: 1px solid var(--border); transition: all var(--dur-medium) var(--ease-out);
-  position: relative; overflow: hidden; cursor: pointer;
+  position: relative; overflow: hidden; cursor: pointer; height: 100%;
 }
 .news-card::after { content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 3px; background: var(--brand-gradient); transform: scaleX(0); transform-origin: left; transition: transform 400ms var(--ease-out); }
 .news-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: transparent; }
@@ -398,7 +390,7 @@ textarea.field { resize: none; min-height: 96px; font-family: var(--font-body); 
 .news-tag { font-family: var(--font-display); font-weight: 600; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brand-blue); padding: 4px 10px; background: rgba(0,180,216,0.08); border-radius: 9999px; }
 .news-title { font-family: var(--font-display); font-weight: 700; font-size: 24px; line-height: 1.35; margin: 0 0 14px; color: var(--fg1); letter-spacing: -0.012em; }
 .news-excerpt { font-family: var(--font-body); font-size: 17px; line-height: 1.6; color: var(--fg2); margin: 0 0 24px; }
-.news-link { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-display); font-weight: 600; font-size: 14px; color: var(--brand-blue); letter-spacing: 0.01em; }
+.news-link { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-display); font-weight: 600; font-size: 14px; color: var(--brand-blue); letter-spacing: 0.01em; margin-top: auto; }
 .news-arrow { display: inline-block; transition: transform var(--dur-short) var(--ease-out); }
 .news-card:hover .news-arrow { transform: translateX(4px); }
 .news-cta { display: flex; justify-content: center; margin-top: 48px; }
