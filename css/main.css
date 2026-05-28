@@ -557,7 +557,9 @@ textarea.field { resize: none; min-height: 96px; font-family: var(--font-body); 
   .nav-burger { display: inline-flex; }
   .hero { padding: 64px 0; }
   .hero-visual { height: 460px; max-width: 100%; }
-  .card-grid, .team-grid, .partners-grid, .news-grid { grid-template-columns: 1fr; }
+  .card-grid, .news-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: repeat(3, 1fr); }
+  .partners-grid { grid-template-columns: repeat(2, 1fr); }
   footer .container.cols { grid-template-columns: 1fr; gap: 32px; }
   .section-title { font-size: var(--fs-h2); }
   .team-detail { grid-template-columns: 1fr; gap: 32px; }
