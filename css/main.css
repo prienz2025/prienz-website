@@ -262,9 +262,8 @@ section[id] { scroll-margin-top: 80px; }
 .team-card { text-align: center; }
 .team-avatar {
   width: 120px; height: 120px; border-radius: 9999px;
-  background: var(--surface-alt); color: var(--fg2); margin: 0 auto 20px;
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-display); font-weight: 700; font-size: 32px;
+  background: var(--surface-alt); margin: 0 auto 20px;
+  object-fit: cover;
   border: 3px solid var(--border);
   transition: all var(--dur-medium) var(--ease-out);
 }
@@ -467,7 +466,7 @@ textarea.field { resize: none; min-height: 96px; font-family: var(--font-body); 
 .team-detail-grid { display: flex; flex-direction: column; margin-top: 56px; border-top: 1px solid var(--border); }
 .team-detail-grid > .reveal { border-bottom: 1px solid var(--border); }
 .team-detail { display: grid; grid-template-columns: 220px 1fr; gap: 64px; padding: 56px 0; align-items: start; }
-.team-detail-avatar { width: 180px; height: 180px; border-radius: 9999px; background: var(--surface-alt); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: 48px; color: var(--fg2); border: 3px solid var(--border); transition: all var(--dur-medium) var(--ease-out); }
+.team-detail-avatar { width: 180px; height: 180px; border-radius: 9999px; background: var(--surface-alt); object-fit: cover; border: 3px solid var(--border); transition: all var(--dur-medium) var(--ease-out); }
 .team-detail-grid > .reveal:hover .team-detail-avatar { background: var(--brand-gradient); color: #fff; border-color: rgba(0,180,216,0.2); }
 .team-detail-role { font-family: var(--font-mono); font-size: 13px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--brand-blue); margin-bottom: 16px; }
 .team-detail-name { font-family: var(--font-display); font-weight: 800; font-size: 42px; letter-spacing: -0.022em; margin: 0 0 22px; color: var(--fg1); line-height: 1.1; }
